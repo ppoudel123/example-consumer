@@ -67,12 +67,12 @@ deploy: deploy_app record_deployment
 no_deploy:
 	@echo "Not deploying as not on master branch"
 
+#--to-environment ${ENVIRONMENT} \
 can_i_deploy: .env
 	@echo "\n========== STAGE: can-i-deploy? ==========\n"
 	@"${PACT_CLI}" broker can-i-deploy \
 	  --pacticipant ${PACTICIPANT} \
 	  --version ${GIT_COMMIT} \
-	  ##--to-environment ${ENVIRONMENT} \
 	  --retry-while-unknown 30 \
 	  --retry-interval 10
 
