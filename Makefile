@@ -72,7 +72,7 @@ can_i_deploy: .env
 	@"${PACT_CLI}" broker can-i-deploy \
 	  --pacticipant ${PACTICIPANT} \
 	  --version ${GIT_COMMIT} \
-	  --to-environment ${ENVIRONMENT} \
+	  ##--to-environment ${ENVIRONMENT} \
 	  --retry-while-unknown 30 \
 	  --retry-interval 10
 
