@@ -23,14 +23,16 @@ export class API {
   }
 
   generateAuthToken() {
-    return 'Bearer ' + new Date().toISOString();
+    // return 'Bearer ' + new Date().toISOString();
+    return 'Bearer wrnDjLqInU2Hyd1lI92Dzw';
   }
 
   async getAllProducts() {
     return axios
       .get(this.withPath('/products'), {
         headers: {
-          Authorization: this.generateAuthToken()
+          // Authorization: this.generateAuthToken(),
+          Authorization: 'Bearer 2019-01-14T11:34:18.045Z'
         }
       })
       .then((r) => r.data.map((p) => new Product(p)));
